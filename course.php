@@ -21,10 +21,10 @@
 					semester=$semester AND year=$year";
 			if(!$this->query($str_query)){
 					return false;
-				}
+			}
                     return $this->fetch();
 			
-			}  
+		}  
 
 
 		/**
