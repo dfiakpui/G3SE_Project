@@ -7,7 +7,7 @@
  */
 
 define("DB_HOST", 'localhost');
-define("DB_NAME", 'group_3');
+define("DB_NAME", 'course_repository');
 define("DB_PORT", 3306);
 define("DB_USER","root");
 define("DB_PWORD","");
