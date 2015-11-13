@@ -1,9 +1,9 @@
 <?php
 	include_once("adb.php");
 	
-	class courses extends adb{
+	class course extends adb{
 	
-		function courses(){
+		function course(){
 
 		}
 		
@@ -46,7 +46,7 @@
 		* @return one row from the se_course table whose name field contains the value stored in the parameter $text.
 		*/
 		function get_course_by_name($text){ 
-			$str_query="select * from se_course where course_name like %text%";
+			$str_query="select * from se_course where course_name like '%$text%'";
 			
 			if(!$this->query($str_query)){
 				return false;

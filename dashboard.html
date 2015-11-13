@@ -15,13 +15,29 @@
 		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 		<title>Dashboard</title>
 	</head>
+			
+		<!--Import jQuery before materialize.js-->
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script>
+
+		function search(e) {
+			var text = document.getElementById("search").value;
+			var u = "functions/search.php?text="+text;
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			document.getElementById("result").innerHTML = response;
+		}
+		
+		function clear() {
+			alert(ye);
+			document.getElementById("search").value = "";
+		}
+	</script>
 
 	<body>
-		
-		<!--Import jQuery before materialize.js-->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="js/materialize.min.js"></script>
-		
 		<nav class="teal darken-1" role="navigation">
 			<div class="nav-wrapper">
 				<div>
@@ -34,14 +50,16 @@
 				</div>
 			
 				
-				<ul   class="right"><form>
+				<ul  class="right">
 					<div class="input-field">
-							<input id="search" type="search" required>
-							<label for="search"><i class="material-icons">search</i></label>
-							<i class="material-icons">close</i>
+						<input id="search" type="search" onkeyup = "search()" onblur = "clear()">
+						<label for="search"><i class="material-icons">search</i></label>
+						<i class="material-icons">close</i>
 					</div>
-				</form>	</ul>		
+				</ul>		
 			</div>
 		</nav>	
+		
+		<div id = "result"></div>
 	</body>
  </html>
