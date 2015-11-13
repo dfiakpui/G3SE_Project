@@ -35,7 +35,17 @@
 			alert(ye);
 			document.getElementById("search").value = "";
 		}
-	</script>
+
+		function view_all_courses(){
+			alert("sure");
+			var u = "functions/view_all_courses.php";
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			document.getElementById("result").innerHTML = response;
+		}
+	    </script>
+	    
 
 	<body>
 		<nav class="teal darken-1" role="navigation">
@@ -43,7 +53,7 @@
 				<div>
 					<a href="#" class="brand-logo center">Ashesi Course Bank</a>
 					<ul id="nav-mobile" class="left hide-on-med-and-down">
-						<li><a href="#">Your Courses</a></li>
+						<li onclick="view_all_courses()"><a href="#">Your Courses</a></li>
 						<li><a href="#">Other Courses</a></li>
 						<li><a href="#">Add Course</a></li>
 					</ul>

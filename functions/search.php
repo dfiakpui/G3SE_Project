@@ -16,7 +16,7 @@ if (isset($text) && $text != ""){
 	
 		$row=$obj->fetch();	
 	}
-	
+	 
 	$html .= "</ul></div>";
 	echo utf8_encode ($html);
 }

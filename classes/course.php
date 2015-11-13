@@ -22,7 +22,7 @@
 		}    
 		
 		/** 
-		*This is the view course code that queries the cdatabase and 
+		*This is the view a specific course code that queries the cdatabase and 
 		*allows users to view a course.
 		*@param $code This specifies the course by its course code
 		*@param $semester This specifies the course by its semester (Spring, Summer or Year)
@@ -31,6 +31,19 @@
 		**/
 		function get_course($code, $semester, $year){ 
 			$str_query="Select * from se_course where course_code=$code AND semester=$semester AND year=$year";
+				
+			if(!$this->query($str_query)){
+				return false;
+			}
+				
+			return $this->fetch();
+		}  
+
+		/**
+		*This is to help view all courses in the databse
+		**/
+		function get_all_courses(){ 
+			$str_query="Select * from se_course";
 				
 			if(!$this->query($str_query)){
 				return false;
