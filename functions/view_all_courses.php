@@ -4,7 +4,9 @@ $obj = new course();
 
 $row = $obj->get_all_courses();
 
-$html = "<table><thead><tr>
+$html = "<h2 class='header'>Your Courses</h2>"
+
+$html .= "<table><thead><tr>
 			<th data-field='course_code'>Course Code</th>
 			<th data-field='course_name'>Course Name</th>
 			<th data-field='department_name'>Course Department</th>
