@@ -7,9 +7,9 @@ $row = $obj->get_all_courses();
 $html = "<h3 class='header center'>Your Courses</h3>";
  
 $html .= "<table class='striped highlight'><thead><tr>
+			<th data-field='department_name'>Course Department</th>
 			<th data-field='course_code'>Course Code</th>
 			<th data-field='course_name'>Course Name</th>
-			<th data-field='department_name'>Course Department</th>
 			<th data-field='semester'>Course Semesteer</th>
 			<th data-field='year'>Course Year</th>
 		</tr></thead>";
