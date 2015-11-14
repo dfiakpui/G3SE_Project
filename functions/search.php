@@ -6,7 +6,7 @@ $obj = new course();
 $text = $_REQUEST['text'];
 
 if (isset($text) && $text != ""){
-	$row = $obj->get_course_by_name($text);
+	$row = $obj->search_course($text);
 	
 	$html = "<div class = 'container'>";	
 	$html .= "<ul class='collection with-header'>";

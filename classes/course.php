@@ -57,8 +57,8 @@
 		* @param $text the string to be searched for in the name
 		* @return one row from the se_course table whose name field contains the value stored in the parameter $text.
 		*/
-		function get_course_by_name($text){ 
-			$str_query="select * from se_course where course_name like '%$text%'";
+		function search_course($text){ 
+			$str_query="select * from se_course where course_name like '%$text%' OR course_code like '%$text%' OR department_name like '%$text%' OR semester like '%$text%' OR year like '%$text%'";
 			
 			if(!$this->query($str_query)){
 				return false;
