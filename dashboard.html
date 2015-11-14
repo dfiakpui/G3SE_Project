@@ -31,6 +31,15 @@
 			document.getElementById("result").innerHTML = response;
 		}
 		
+		function view_form(){
+			var u = "functions/view_form.php";
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			document.getElementById("result").innerHTML = response;
+		
+		}
+		
 		function clear() {
 			alert(ye);
 			document.getElementById("search").value = "";
@@ -54,7 +63,7 @@
 					<ul id="nav-mobile" class="left hide-on-med-and-down">
 						<li onclick="view_all_courses()"><a href="#">Your Courses</a></li>
 						<li><a href="#">Other Courses</a></li>
-						<li><a href="#">Add Course</a></li>
+						<li><a href="#" onclick= "view_form()">Add Course</a></li>
 					</ul>
 				</div>
 			
