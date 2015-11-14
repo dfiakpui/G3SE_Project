@@ -16,8 +16,8 @@
 		* @param $semester  this gives the semester that the course is being offered
 		* @paraam $year this shows the year that the course is being run
 		*/
-		function add_course($code, $name, $department,$description,$objective,$semester,$year){
-			$str_query = "Insert into se_course where course_code=$code, course_name=$name, description=$description, semester=$semester, year=$year";
+		function add_course($code, $name,$description,$objective,$semester,$year, $department){
+			$str_query = "Insert into se_course set course_code='$code', course_name='$name', description='$description', semester='$semester', year='$year', department_name='$department'";
 			return $this->query($str_query);
 		}    
 		
