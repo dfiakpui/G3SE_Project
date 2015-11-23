@@ -16,5 +16,35 @@
 		<title>Dashboard</title>
 	</head>
 			
+		<!--Import jQuery before materialize.js-->
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+	<body onload = "viewform()">
+		<nav class="teal darken-1" role="navigation">
+			<div class="nav-wrapper">
+				<div>
+					<a href="#" class="brand-logo center">Ashesi Course Bank</a>
+					<ul id="nav-mobile" class="left hide-on-med-and-down">
+						<li onclick="view_all_courses()"><a href="#">Your Courses</a></li>
+						<li><a href="#">Other Courses</a></li>
+						<li><a href="#">Add Course</a></li>
+					</ul>
+				</div>
+			
+				
+				<ul  class="right">
+					<div class="input-field">
+						<input id="search" type="search" onkeyup = "search()" onblur = "clear()">
+						<label for="search"><i class="material-icons">search</i></label>
+						<i class="material-icons">close</i>
+					</div>
+				</ul>		
+			</div>
+		</nav>	
 		
+		<div id = "result"></div>
+	</body>
  </html>
