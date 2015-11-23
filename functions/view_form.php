@@ -40,9 +40,11 @@ $form = "<div class='row'>
 					</div>
 				</div>
 			</form>
+			<div class = 'row'>
 			<button onclick= 'add()' id = 'add' class='btn waves-effect waves-light' type='submit' name='action'>Submit
 					<i class='material-icons right'>send</i>
 				</button>
+			<div>
 				
 	</div>";
 
