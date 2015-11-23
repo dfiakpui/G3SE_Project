@@ -21,7 +21,59 @@
 		<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
 		<script type="text/javascript" src="js/materialize.min.js"></script>
 
+		<script>
+		$(document).ready(function() {
+			$('select').material_select();
+		});
+			
+		function add() {
+			var course_code = document.getElementById("course_code").value;
+			var course_name = document.getElementById("course_name").value;
+			var description = document.getElementById("description").value;
+			var objective = document.getElementById("objective").value;
+			var department = document.getElementById("department").value;
+			var year = document.getElementById("year").value;
+			var semester = document.getElementById("semester").value;
+			var u = "functions/addCourse.php?course_code="+course_code+"&course_name="+course_name+"&description="
+					+description+"&objective="+objective+"&department="+department+"&semester="+semester+"&year="+year;
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			document.getElementById("result").innerHTML = response;
+		}
+		
+		function search(e) {
+			var text = document.getElementById("search").value;
+			var u = "functions/search.php?text="+text;
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			document.getElementById("result").innerHTML = response;
+		}
+		
+		function view_form(){
+			var u = "functions/view_form.php";
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			document.getElementById("result").innerHTML = response;
+		
+		}
+		
+		function clear() {
+			alert(ye);
+			document.getElementById("search").value = "";
+		}
 
+		function view_all_courses(){
+			var u = "functions/view_all_courses.php";
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			document.getElementById("result").innerHTML = response;
+		}
+	</script>
+	    
 	<body onload = "viewform()">
 		<nav class="teal darken-1" role="navigation">
 			<div class="nav-wrapper">
