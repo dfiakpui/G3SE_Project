@@ -21,25 +21,41 @@
 		<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
 		<script type="text/javascript" src="js/materialize.min.js"></script>
 
-		<script>
+		<script>		
+		var course_code, semester, year;
+		
 		$(document).ready(function() {
 			$('select').material_select();
 		});
 			
 		function add() {
-			var course_code = document.getElementById("course_code").value;
-			var course_name = document.getElementById("course_name").value;
+			course_code = document.getElementById("course_code").value;
+			var  course_name = document.getElementById("course_name").value;
 			var description = document.getElementById("description").value;
 			var objective = document.getElementById("objective").value;
 			var department = document.getElementById("department").value;
-			var year = document.getElementById("year").value;
-			var semester = document.getElementById("semester").value;
+			year = document.getElementById("year").value;
+			semester = document.getElementById("semester").value;
 			var u = "functions/addCourse.php?course_code="+course_code+"&course_name="+course_name+"&description="
 					+description+"&objective="+objective+"&department="+department+"&semester="+semester+"&year="+year;
 			var obj=$.ajax({url:u,async:false});
 			
 			var response = obj.responseText
 			document.getElementById("result").innerHTML = response;
+		}
+		
+		function addBook() {
+			var book_code = document.getElementById("book_code").value;
+			var book_name = document.getElementById("book_name").value;
+			var author = document.getElementById("author").value;
+			var other = document.getElementById("other").value;
+		
+			var u = "functions/addbook.php?book_code="+book_code+"&book_name="+book_name+"&author="
+					+author+"&other="+other+"&course_code="+course_code+"&semester="+semester+"&year="+year;
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			//document.getElementById("result").innerHTML = response;
 		}
 		
 		function search(e) {
