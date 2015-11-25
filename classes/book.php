@@ -17,8 +17,8 @@ class book extends adb{
 	* @param $year the year the book was used
 	* @param $semester the semester the book was used
 	*/
-	function add_book($code, $name, $author, $course_code, $year, $semester){
-		$str_query = "insert into se_books set book_code = '$code', book_name = '$name', author = '$author',
+	function add_book($code, $name, $author, $other, $course_code, $year, $semester){
+		$str_query = "insert into se_book set book_code = '$code', book_name = '$name', author = '$author', other_details = '$other',
 						course_code = '$course_code', year = '$year', semester = '$semester'";
 			
 		return $this->query($str_query);		
