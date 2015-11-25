@@ -66,7 +66,7 @@
 			var obj=$.ajax({url:u,async:false});
 			
 			var response = obj.responseText
-			document.getElementById("result").innerHTML = response;
+			document.getElementById("search_result").innerHTML = response;
 		}
 		
 		function view_form(){
@@ -100,7 +100,7 @@
 					<ul id="nav-mobile" class="left hide-on-med-and-down">
 						<li><a href="dashboard.html">Your Courses</a></li>
 						<li><a href="#">Other Courses</a></li>
-						<li><a href="#">Add Course</a></li>
+						<li  onclick = "view_form()"><a href="">Add Course</a></li>
 					</ul>
 				</div>
 			
@@ -116,7 +116,7 @@
 		</nav>	
 		
 		
-		<div>
+		<div id = "search_result">
 			<div class="col s12 green lighten-4">
 			  <ul class="tabs green lighten-4">
 				<li class="tab col s3"><a class="active" href="#courseDetail">Course Details</a></li>
