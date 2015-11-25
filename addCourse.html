@@ -45,6 +45,7 @@
 		}
 		
 		function addBook() {
+			
 			var book_code = document.getElementById("book_code").value;
 			var book_name = document.getElementById("book_name").value;
 			var author = document.getElementById("author").value;
@@ -55,7 +56,8 @@
 			var obj=$.ajax({url:u,async:false});
 			
 			var response = obj.responseText
-			//document.getElementById("result").innerHTML = response;
+			document.getElementById("result").innerHTML = response;
+			alert(book_name+" added");
 		}
 		
 		function search(e) {
@@ -150,7 +152,7 @@
 						</div>
 					</div>			
 				</form>
-				<a href = "#courseDetail"><button  class='btn waves-effect waves-light' type='submit' name='action'>Next
+				<a href = "#courseDetail"><button  class='btn waves-effect waves-light' type='submit' name='action' onclick = "addBook()">Next
 						<i class='material-icons right'>send</i>
 					</button></a>
 				</div>
