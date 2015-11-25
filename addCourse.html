@@ -21,19 +21,21 @@
 		<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
 		<script type="text/javascript" src="js/materialize.min.js"></script>
 
-		<script>
+		<script>		
+		var course_code, semester, year;
+		
 		$(document).ready(function() {
 			$('select').material_select();
 		});
 			
 		function add() {
-			var course_code = document.getElementById("course_code").value;
-			var course_name = document.getElementById("course_name").value;
+			course_code = document.getElementById("course_code").value;
+			var  course_name = document.getElementById("course_name").value;
 			var description = document.getElementById("description").value;
 			var objective = document.getElementById("objective").value;
 			var department = document.getElementById("department").value;
-			var year = document.getElementById("year").value;
-			var semester = document.getElementById("semester").value;
+			year = document.getElementById("year").value;
+			semester = document.getElementById("semester").value;
 			var u = "functions/addCourse.php?course_code="+course_code+"&course_name="+course_name+"&description="
 					+description+"&objective="+objective+"&department="+department+"&semester="+semester+"&year="+year;
 			var obj=$.ajax({url:u,async:false});
@@ -42,13 +44,29 @@
 			document.getElementById("result").innerHTML = response;
 		}
 		
+		function addBook() {
+			
+			var book_code = document.getElementById("book_code").value;
+			var book_name = document.getElementById("book_name").value;
+			var author = document.getElementById("author").value;
+			var other = document.getElementById("other").value;
+		
+			var u = "functions/addbook.php?book_code="+book_code+"&book_name="+book_name+"&author="
+					+author+"&other="+other+"&course_code="+course_code+"&semester="+semester+"&year="+year;
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			document.getElementById("result").innerHTML = response;
+			alert(book_name+" added");
+		}
+		
 		function search(e) {
 			var text = document.getElementById("search").value;
 			var u = "functions/search.php?text="+text;
 			var obj=$.ajax({url:u,async:false});
 			
 			var response = obj.responseText
-			document.getElementById("result").innerHTML = response;
+			document.getElementById("search_result").innerHTML = response;
 		}
 		
 		function view_form(){
@@ -87,7 +105,7 @@
   						</ul>
 
 						<li><a href="#">Other Courses</a></li>
-						<li><a href="#">Add Course</a></li>
+						<li  onclick = "view_form()"><a href="">Add Course</a></li>
 					</ul>
 				</div>
 			
@@ -103,7 +121,7 @@
 		</nav>	
 		
 		
-		<div>
+		<div id = "search_result">
 			<div class="col s12 green lighten-4">
 			  <ul class="tabs green lighten-4">
 				<li class="tab col s3"><a class="active" href="#courseDetail">Course Details</a></li>
@@ -114,7 +132,7 @@
 					<div id = "result"></div>
 				</div>
 			<div id="addBook" class="col s12">
-			
+				<div class = "row">
 				<form id = 'form' method= 'post' action='#' class='col s12' novalidate = 'novalidate'>
 					<div class='row'>
 						<div class='input-field col s3'>
@@ -139,10 +157,10 @@
 						</div>
 					</div>			
 				</form>
-				<a href = "#courseDetail"><button  class='btn waves-effect waves-light' type='submit' name='action'>Next
+				<a href = "#courseDetail"><button  class='btn waves-effect waves-light' type='submit' name='action' onclick = "addBook()">Next
 						<i class='material-icons right'>send</i>
 					</button></a>
-				
+				</div>
 			</div>
 		</div>
 		
