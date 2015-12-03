@@ -33,7 +33,7 @@ class book extends adb{
 	* @param $year the year the book was used
 	* @param $semester the semester the book was used
 	*/
-	function get_book($code, $name, $author, $other, $course_code, $year, $semester){
+	function get_book_by_course($code, $name, $author, $other, $course_code, $year, $semester){
 		$str_query="select * from se_book where course_code=$code AND semester=$semester AND year=$year";
 				
 			if(!$this->query($str_query)){
