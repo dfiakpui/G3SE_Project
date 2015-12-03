@@ -15,7 +15,7 @@ $html = "<table class='highlight'><thead><tr>
 	$html.= "<tbody>";
 
 while($row){
-	$html.= "<tr onclick = 'view_single('{$row['course_code']}','{$row['semester']}','{$row['year']}')'>
+	$html.= "<tr onclick = 'view_single_course('{$row['course_code']}','{$row['semester']}','{$row['year']}')'>
 	        <td>{$row['department_name']}</td>
             <td>{$row['course_code']}</td>
             <td>{$row['course_name']}</td>

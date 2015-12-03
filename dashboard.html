@@ -71,6 +71,16 @@
 			var response = obj.responseText
 			document.getElementById("result").innerHTML = response;
 		}
+		
+		function view_single_course(var code,var sem, var year){
+			var u = "functions/viewSingleCourse.php?course_code="+code+"&semester="+semester+"&year="+year;
+			
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			document.getElementById("result").innerHTML = response;
+		
+		}
 	    </script>
 	    
 
