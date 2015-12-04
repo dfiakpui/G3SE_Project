@@ -71,6 +71,7 @@
 			var response = obj.responseText
 			document.getElementById("result").innerHTML = response;
 		}
+<<<<<<< HEAD
 
 		function view_all_books(){
 			var u = "functions/view_all_books.php";
@@ -80,6 +81,20 @@
 			document.getElementById("result").innerHTML = response;
 		}
 
+=======
+		
+		function view_single_course(code,semester,year){
+
+			var u = "functions/view_single_course.php?course_code="+code+"&semester="+semester+"&year="+year;
+			
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText;
+			//alert(response);
+			document.getElementById("result").innerHTML = response;
+		
+		}
+>>>>>>> 278b73834b9ab6be39b65eeb13d8bad28ba059cb
 	    </script>
 	    
 

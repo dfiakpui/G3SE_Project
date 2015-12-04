@@ -15,8 +15,18 @@ $html = "<table class='highlight'><thead><tr>
 	$html.= "<tbody>";
 
 while($row){
-	$html.= "<tr>
-	        <td>{$row['department_name']}</td>
+	$html.= "<tr onclick = view_single_course(";
+	$html.= '"';
+	$html.= "{$row['course_code']}";
+	$html.= '",';
+	$html.= '"';
+	$html.= "{$row['semester']}";
+	$html.= '",';
+	$html.= '"';
+	$html.= "{$row['year']}";
+	$html.= '"';
+	$html.= ")>";
+	$html.=  "<td>{$row['department_name']}</td>
             <td>{$row['course_code']}</td>
             <td>{$row['course_name']}</td>
             <td>{$row['semester']}</td>

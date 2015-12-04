@@ -31,6 +31,18 @@ class book extends adb{
 	**/
 	function get_all_books(){ 
 			$str_query="Select * from se_book";
+
+	/**
+	* This adds a book to the database
+	* @param $code the barcode of the book
+	* @param $name the name of the book
+	* @param $author the author of the book
+	* @param $course_code the code of the course that uses this book
+	* @param $year the year the book was used
+	* @param $semester the semester the book was used
+	*/
+	function get_book_by_course($code, $semester, $year){
+		$str_query="select * from se_book where course_code='$code' AND semester='$semester' AND year='$year'";
 				
 			if(!$this->query($str_query)){
 				return false;
@@ -38,5 +50,7 @@ class book extends adb{
 				
 			return $this->fetch();
 	}  
+			return $this->fetch();		
+	}
 }
 ?>
