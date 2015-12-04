@@ -21,6 +21,10 @@ $html .= "<p>{$row['department_name']} </p>";
 $html .= "<p>{$row['semester']} {$row['year']}</p>";
 $html .= "<p>{$row['description']} </p>";
 $html .= "<p>{$row['objective']} </p>";
+$html .= "<h5>Books</h5>";
+$html .= "<p>{$rowBook['book_name']} </p>";
+$html .= "<p>{$rowBook['author']}</p>";
+$html .= "<p>{$rowBook['other_details']} </p>";
 $html .= "</div></div></div>";
 
 		
