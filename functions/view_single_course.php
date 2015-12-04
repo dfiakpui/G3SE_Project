@@ -4,7 +4,7 @@ include("../classes/book.php");
 $obj = new course();
 $objBook = new book();
 
-$course_code = $_REQUEST['code'];
+$course_code = $_REQUEST['course_code'];
 $semester = $_REQUEST['semester'];
 $year = $_REQUEST['year'];
 
