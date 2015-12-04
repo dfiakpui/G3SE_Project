@@ -78,7 +78,8 @@
 			
 			var obj=$.ajax({url:u,async:false});
 			
-			var response = obj.responseText
+			var response = obj.responseText;
+			alert(response);
 			document.getElementById("result").innerHTML = response;
 		
 		}
