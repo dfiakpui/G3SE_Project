@@ -1,7 +1,7 @@
 <?php
 	include_once("adb.php");
 	
-	class course extends adb{
+	class faculty extends adb{
 	
 		function faculty(){
 
