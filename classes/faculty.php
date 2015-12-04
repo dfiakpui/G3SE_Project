@@ -18,7 +18,7 @@
 		* @param $username this is the user_name of the faculty
 		* @param $password this is the password of the faculty
 		*/
-		function add_faculty($id, $firstname, $lastname,$status,$email,$telephone,$office_hour,$username,$pword){
+		function add_faculty($id, $fname, $lname,$status,$email,$telephone,$officehour,$username,$pword){
 			$str_query = "Insert into se_faculty set unique_id='id', first_name='$firstname',last_name='$lastname', status='$status', email='$email', telephone='$telephone', office_hours='$officehours',username=$username',password=$pword'";
 			return $this->query($str_query);
 		}    
