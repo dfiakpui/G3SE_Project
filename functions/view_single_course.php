@@ -12,8 +12,17 @@ if (isset($course_code)){
 
 $row = $obj->get_course($course_code, $semester, $year);
 $rowBook = $objBook->get_book_by_course($course_code, $semester, $year);
- 
-$html = "<h3>{$row['course_code']} {$row['course_name']}</h3>";
+
+$html = "<div class = 'row'>";
+$html .= "<div class='input-field col s11'>";
+$html .= "<h4 class = 'center'>{$row['course_code']} {$row['course_name']}</h4>";
+$html .= "<div class='input-field col s11 offset-s2'>";
+$html .= "<p>{$row['department_name']} </p>";
+$html .= "<p>{$row['semester']} {$row['year']}</p>";
+$html .= "<p>{$row['description']} </p>";
+$html .= "<p>{$row['objective']} </p>";
+$html .= "</div></div></div>";
+
 		
 echo utf8_encode($html);
 }
