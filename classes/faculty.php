@@ -7,7 +7,8 @@
 
 		}
 		
-		/** This is the add_faculty function that adds faculties into the database by taking parameters unique_id,name (first and last),email and telephone number
+		/** 
+		* This is the add_faculty function that adds faculties into the database by taking parameters unique_id,name (first and last),email and telephone number
 		* @param $id this is the id number of the faculty
 		* @param $firstname this is the name of the faculty
 		* @param $firstname this is the name of the faculty
@@ -21,6 +22,8 @@
 		function add_faculty($id, $fname, $lname,$status,$email,$telephone,$officehour,$username,$pword){
 			$str_query = "Insert into se_faculty set unique_id='id', first_name='$firstname',last_name='$lastname', status='$status', email='$email', telephone='$telephone', office_hours='$officehours',username=$username',password=$pword'";
 			return $this->query($str_query);
-		}    
+		}
+	}
+?>    
 		
 		

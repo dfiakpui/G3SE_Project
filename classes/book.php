@@ -33,7 +33,7 @@ class book extends adb{
 			$str_query="Select * from se_book";
 
 	/**
-	* This adds a book to the database
+	* This gets a book to the database
 	* @param $code the barcode of the book
 	* @param $name the name of the book
 	* @param $author the author of the book
