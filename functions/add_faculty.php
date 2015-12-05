@@ -10,9 +10,9 @@
 		$status=$_REQUEST['status'];
 		$email=$_REQUEST['email'];
 		$telephone = $_REQUEST['telphone'];
-		$officehour = $_REQUEST['office_hour'];
+		$officehour = $_REQUEST['office_hours'];
 		$username = $_REQUEST['username'];
-		$pword = $_REQUEST['pword'];
+		$pword = $_REQUEST['password'];
 		
 		if(!$obj->add_faculty($id, $fname, $lname,$status,$email,$telephone,$officehour,$username,$pword)){
 			echo "error adding ".mysql_error();
