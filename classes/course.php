@@ -41,6 +41,7 @@
 
 		/**
 		*This is to help view all courses in the databse
+		*@return output a view page where the user can view the courses he or she has added
 		**/
 		function get_all_courses(){ 
 			$str_query="Select * from se_course";

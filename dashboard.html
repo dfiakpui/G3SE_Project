@@ -71,6 +71,17 @@
 			var response = obj.responseText
 			document.getElementById("result").innerHTML = response;
 		}
+<<<<<<< HEAD
+
+		function view_all_books(){
+			var u = "functions/view_all_books.php";
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			document.getElementById("result").innerHTML = response;
+		}
+
+=======
 		
 		function view_single_course(code,semester,year){
 
@@ -83,19 +94,27 @@
 			document.getElementById("result").innerHTML = response;
 		
 		}
+>>>>>>> 278b73834b9ab6be39b65eeb13d8bad28ba059cb
 	    </script>
 	    
 
-	<body onload = "view_all_courses()">
+	<body onload = "#">
 		<nav class="teal darken-1" role="navigation">
 			<div class="nav-wrapper">
 				<div>
 					<a href="#" class="brand-logo center">Ashesi Course Bank</a>
 					<ul id="nav-mobile" class="left hide-on-med-and-down">
-						<li onclick="view_all_courses()"><a href="#">Your Courses</a></li>
+						<li><a class='dropdown-button btn' href='#' data-activates='dropdown1'>Your Information</a></li>
+						<ul id='dropdown1' class='dropdown-content'>
+    						<li onclick="view_all_courses()"><a href="#!">Your courses</a></li>
+   						    <li onclick="view_all_books()"><a href="#!">Your Books</a></li>
+ 					    </ul>
+
 						<li><a href="#">Other Courses</a></li>
 						<li><a href="addCourse.html">Add Course</a></li>
 					</ul>
+					<ul class="collapsible" data-collapsible="accordion">
+
 				</div>
 			
 				

@@ -29,7 +29,19 @@ class book extends adb{
 			
 		return $this->query($str_query);		
 	}
-	
+
+	/**
+	*This is to help view all courses in the databse
+	*This function does not need any parameters
+	*@return output a view page where the user can view the courses he or she has added
+	**/
+	function get_all_books(){ 
+		$str_query="Select * from se_book";
+		
+		return $this->fetch();	
+	}
+			
+
 	/**
 	* This returns a book from the database specific to a particular course, semester and year
 	* @param $code the course code of the course the book is used for
@@ -43,8 +55,8 @@ class book extends adb{
 		if(!$this->query($str_query)){
 			return false;
 		}
-				
-		return $this->fetch();		
+  
+		return $this->fetch();
 	}
 }
 ?>
