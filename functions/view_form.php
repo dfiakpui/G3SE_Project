@@ -3,17 +3,17 @@
 				<form id = 'form' method= 'post' action='#' class='col s12' novalidate = 'novalidate'>
 					<div class='row'>
 						<div class='input-field col s3'>
-							<input id='unique_id' name= 'unique_id' type='text' class = 'validate' required = '' aria-required='true'>
-							<label for='unique_id'>Faculty ID</label>
-						</div>
-						<div class='input-field col s7 offset-s1'>
-							<input id='first_name' name= 'first_name' type='text' class = 'validate' required = ''>
-							<label for='first_name'>First Name</label>
-						</div>
-						<div class='input-field col s7 offset-s4'>
-							<input id='last_name' name= 'last_name' type='text' class = 'validate' required = ''>
-							<label for='last_name'>Last Name</label>
-						</div>
+						<input id='unique_id' name= 'unique_id' type='text' class = 'validate' required = '' aria-required='true'>
+						<label for='unique_id'>Faculty ID</label>
+					</div>
+					<div class='input-field col s7 offset-s1'>
+						<input id='first_name' name= 'first_name' type='text' class = 'validate' required = ''>
+						<label for='first_name'>First Name</label>
+					</div>
+					<div class='input-field col s7 offset-s4'>
+						<input id='last_name' name= 'last_name' type='text' class = 'validate' required = ''>
+						<label for='last_name'>Last Name</label>
+					</div>
 					</div>
 					<div class='row'>
 						<div class='input-field col s11'>
@@ -44,8 +44,8 @@
 						</div>
 					</div>			
 				</form>
-				<a href = "#addFaculty"><button  class='btn waves-effect waves-light' type='submit' name='action' onclick = "addFaculty()">Next
-						<i class='material-icons right'>send</i>
+				<a href = "#addFaculty"><button  class='btn waves-effect waves-light' type='submit' name='action' onclick = "editFaculty()">Next
+						<i class='material-icons right'>update</i>
 					</button></a>
 				</div>
 			</div>
