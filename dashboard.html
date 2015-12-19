@@ -50,6 +50,26 @@
 			document.getElementById("result").innerHTML = response;
 		}
 		
+		function editFaculty(){
+			var unique_id = document.getElementById("id").value;
+			var firstname = document.getElementById("firstname").value;
+			var lastname = document.getElementById("lastname").value;
+			var status = document.getElementById("status").value;
+			var telephone = document.getElementById("telephone").value;
+			var office = document.getElementById("office").value;
+			var pword = document.getElementById("pword").value;
+			var username = document.getElementById("username").value;
+			var u = "functions/addCourse.php?unique_id="+id+"&firstname="+firstname+"&lastname="
+					+lastname+"&status="+status+"&telephone="+telephone+"&office="+office+"&pword="+pword+"&username="+&username;
+			var obj=$.ajax({url:u,async:false});
+			
+			var response = obj.responseText
+			document.getElementById("result").innerHTML = response;
+		
+		
+		
+		}
+		
 		function view_form(){
 			var u = "functions/view_form.php";
 			var obj=$.ajax({url:u,async:false});
